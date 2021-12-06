@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sim
+  name: sim-svc
+  namespace: simulator
+spec:
+  port:
+    targetPort: 8000
+  to:
+    kind: ""
+    name: sim-svc
+    weight: null
+status: {}

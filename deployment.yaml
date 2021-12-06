@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sim
+  name: simulator
+  namespace: simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sim 
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sim
+    spec:
+      containers:
+        - image: quay.io/saarora/webgl_sim:latest
+          name: simulator
+          ports:
+          - containerPort: 8000
+          resources: {}
